@@ -23,7 +23,7 @@ jobs:
           python-version: 3.8
          
       - name: 'Install requirements'
-        run: pip install -r ./requirements.txt 
+        run: pip install -r ./Scripts/qqread/requirements.txt 
         
       - name: '运行【企鹅读书】' 
         run: python3 ./Scripts/qqread/qqread.py 
