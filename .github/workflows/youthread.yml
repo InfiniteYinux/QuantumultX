@@ -24,7 +24,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: '运行【企鹅读书】' 
+    - name: '运行【中青看点】' 
       run: cmd node ./Scripts/youthread/youthread.js
       env:
           YOUTH_HEADER: ${{ secrets.YOUTH_HEADER }}
