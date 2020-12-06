@@ -26,7 +26,7 @@ jobs:
         run: pip install -r ./requirements.txt 
         
       - name: '运行【企鹅读书】' 
-        run: python3 ../Scripts/qqread/qqread.py 
+        run: python3 ./Scripts/qqread/qqread.py 
         env:
             QQREADHEADERS: ${{ secrets.QQREADHEADERS }}
             QQREADTIMEHEADERS: ${{ secrets.QQREADTIMEHEADERS }}
