@@ -6,7 +6,7 @@ name: 中青看点
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '9 * * * *'
   watch:
     types: [started]
 jobs:
@@ -15,7 +15,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id  
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: 12.X
 
     steps:
     - uses: actions/checkout@v2
@@ -25,7 +25,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: '运行【企鹅读书】' 
-      run: node ./Scripts/youthread/youthread.js
+      run: cmd node ./Scripts/youthread/youthread.js
       env:
           YOUTH_HEADER: ${{ secrets.YOUTH_HEADER }}
           YOUTH_ARTBODY: ${{ secrets.YOUTH_ARTBODY }}
