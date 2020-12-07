@@ -25,12 +25,12 @@ jobs:
     - name: npm install
       if: env.YOUTH_TIME
       run: |
-        cd ~/QuantumultX/Scripts/Youth
+        cd ~/QuantumultX/Scripts/youthread
         npm install
     - name: '运行【中青看点】' 
       run: |
-        cd ~/QuantumultX
-        node Scripts/youthread/youth.js
+        cd ~/QuantumultX/Scripts/youthread
+        node youth.js
       env:
           YOUTH_HEADER: ${{ secrets.YOUTH_HEADER }}
           YOUTH_ARTBODY: ${{ secrets.YOUTH_ARTBODY }}
