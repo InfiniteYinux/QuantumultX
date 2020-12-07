@@ -44,9 +44,3 @@ jobs:
           SCKEY: ${{ secrets.SCKEY }}
           BARK: ${{ secrets.BARK }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-<<<<<<< HEAD
-          TG_USER_ID: ${{ secrets.TG_USER_ID }} 
-=======
-          TG_USER_ID: ${{ secrets.TG_USER_ID }} 
-
->>>>>>> e9d86c014f329695ea934b7adceee48b4ecc073c
