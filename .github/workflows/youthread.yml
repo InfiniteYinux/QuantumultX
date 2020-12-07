@@ -9,7 +9,7 @@ name: 中青看点
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/9 * * * *'
+    - cron: '*/30 * * * *'
   watch:
     types: started
 jobs:
@@ -21,6 +21,7 @@ jobs:
     - name: Checkout
       run: |
         git clone https://github.com/InfiniteYinux/QuantumultX.git ~/QuantumultX
+
     - name: Use Node.js 12.x
       uses: actions/setup-node@v1
       with:
