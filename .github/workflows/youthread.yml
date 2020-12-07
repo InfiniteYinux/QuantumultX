@@ -20,11 +20,7 @@ jobs:
     steps:
     - name: Checkout
       run: |
-<<<<<<< HEAD
         git clone https://github.com/InfiniteYinux/QuantumultX.git ~/QuantumultX
-=======
-        git clone https://github.com/CenBoMin/QuantumultX.git ~/QuantumultX
->>>>>>> b532dd9c8c6ef9a5bb3a27c074c0159a686d03a7
     - name: Use Node.js 12.x
       uses: actions/setup-node@v1
       with:
@@ -32,11 +28,11 @@ jobs:
     - name: npm install
       if: env.YOUTH_TIME
       run: |
-        cd ~/QuantumultX/Scripts/Youth
+        cd ~/QuantumultX/Scripts/youthread
         npm install
     - name: '运行【中青看点】' 
       run: |
-        cd ~/QuantumultX/Scripts/Youth
+        cd ~/QuantumultX/Scripts/youthread
         node youth.js
       env:
           YOUTH_HEADER: ${{ secrets.YOUTH_HEADER }}
@@ -48,8 +44,4 @@ jobs:
           SCKEY: ${{ secrets.SCKEY }}
           BARK: ${{ secrets.BARK }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-<<<<<<< HEAD
           TG_USER_ID: ${{ secrets.TG_USER_ID }} 
-=======
-          TG_USER_ID: ${{ secrets.TG_USER_ID }}
->>>>>>> b532dd9c8c6ef9a5bb3a27c074c0159a686d03a7
