@@ -6,7 +6,7 @@ name: 中青看点
 on:
   workflow_dispatch:
   schedule:
-     - cron: '*/30 0-23 * * *'
+     - cron: '*/35 * * * *'
   watch:
     types: started
 
@@ -18,11 +18,11 @@ jobs:
         YOUTH_HEADER: ${{ secrets.YOUTH_HEADER }}
         YOUTH_ARTBODY: ${{ secrets.YOUTH_ARTBODY }}
         YOUTH_REDBODY: ${{ secrets.YOUTH_REDBODY }}
-        YOUTH_TIME: ${{ secrets.YOUTH_TIME }}	
+        YOUTH_TIME: ${{ secrets.YOUTH_TIME }}
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/InfiniteYinux/QuantumultX.git ~/QuantumultX
+          git clone https://github.com/Sunert/Scripts.git ~/Scripts
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -30,15 +30,15 @@ jobs:
       - name: npm install
         if: env.YOUTH_HEADER
         run: |
-          cd ~/QuantumultX
+          cd ~/Scripts
           npm install
       - name: '运行 【中青看点】'
         if: env.YOUTH_HEADER
         run: |
-          cd ~/QuantumultX
-          node Scripts/youthread/youth.js
+          cd ~/Scripts
+          node Task/youth.js
         env:
-          
+          YOUTH_NOTIFY_CONTROL: ${{ secrets.YOUTH_NOTIFY_CONTROL }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
@@ -46,3 +46,5 @@ jobs:
           BARK_SOUND: ${{ secrets.BARK_SOUND }}
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
+
+    
