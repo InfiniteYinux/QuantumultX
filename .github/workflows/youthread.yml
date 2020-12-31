@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/CenBoMin/QuantumultX.git ~/QuantumultX
+          git clone https://github.com/InfiniteYinux/QuantumultX.git ~/QuantumultX
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -36,7 +36,7 @@ jobs:
         if: env.YOUTH_HEADER
         run: |
           cd ~/QuantumultX
-          node Scripts/Youth/youth.js
+          node Scripts/youthread/youth.js
         env:
           
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
